@@ -6,27 +6,25 @@ class TrainerConsole(object):
         print "Aufgabentrainer"
         print "===============\n"
 
-    def anmelden(self):
+    def getLogin(self):
         print "Wie lautet ihr Benutzername?",
         benutzername = raw_input()
         print "Wie lautet ihr Passwort?",
         passwort = raw_input()
         return benutzername, passwort
 
-    def abgelaufen(self):
-        print "Leider ist dieser Test schon abgelaufen."
-
-    def schonbearbeitet(self):
-        print "Dieses Ticket wurde schon einmal benutzt."
-
     def keinticket(self):
         print "Mit dieser Kombination aus Benutzername und Passwort gibt es kein Ticket"
+    def schonbearbeitet(self):
+        print "Dieses Ticket wurde schon einmal benutzt."
+    def abgelaufen(self):
+        print "Leider ist dieser Test schon abgelaufen."
 
     def neuerversuch(self):
         print "Bitte versuchen Sie es erneut."
 
     def eingeloggt(self):
-        print "Login war erfolgreich."
+        print "Login war erfolgreich.\n"
 
     def startinfo(self, Testname, Modultitel, Modulbeschreibung, AnzahlAufgaben):
         print "Test:",  Testname
@@ -42,7 +40,7 @@ class TrainerConsole(object):
         print "Auf Wiedersehen."
 
     def zeigeaufgabe(self, Id, Aufgabe):
-        print "==============="
+        print ""
         print "Id:", Id
         print "Frage:",  Aufgabe[0]
         for i in range(4):
@@ -65,10 +63,9 @@ class TrainerConsole(object):
     def ergebnis(self, test, (richtige, fertige, anzahl), (m, s)):
         print "\n=================="
         print "Auswertung"
-        print "Test", test
-        print "Richtige", richtige
-        print "Bearbeitete", fertige
-        print "Anzahl", anzahl
-        print "Zeit", "%d min %.2f sec" % (m, s)
+        print "Test:", test
+        print "Richtige:", richtige
+        print "Es wurden", fertige, "von", anzahl, "Aufgaben bearbeitet."
+        print "Zeit:", "%d min %.2f sec" % (m, s)
 
 

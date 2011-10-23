@@ -2,6 +2,7 @@
 # -*- encoding: utf-8 -*-
 
 from collections import deque
+import random
 
 class Mind(object):
     def __init__(self):
@@ -11,6 +12,7 @@ class Mind(object):
         self.anzahl = None
 
     def setAufgaben(self, liste):
+        random.shuffle(liste)
         self.liste = liste
         self.anzahl = len(liste)
 

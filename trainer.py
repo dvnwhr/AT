@@ -15,7 +15,9 @@ class Trainer(object):
     def main(self):
         self.ui.begruessung()
         while True:
-            benutzername, passwort = self.ui.anmelden()
+            benutzername, passwort = self.ui.getLogin()
+            if benutzername is None:
+                return -1   # Programmende
             test = self.db.ticketanmeldung(benutzername, passwort)
             if test == -1:
                 self.ui.keinticket()
